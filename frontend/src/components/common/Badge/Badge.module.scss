@@ -1,0 +1,75 @@
+@import '../../../styles/variables.scss';
+
+.badge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $border-radius * 1.5; // More rounded for badges
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+// Filled variant (default)
+.filled {
+  // Colors are applied per color type below
+  &.primary {
+    background-color: $primary-color;
+    color: $text-on-dark;
+  }
+  &.secondary {
+    background-color: $secondary-color;
+    color: $text-on-dark;
+  }
+  &.error { // Renamed from 'danger' to 'error' to match props
+    background-color: $danger-color;
+    color: $text-on-dark;
+  }
+  &.warning {
+    background-color: $warning-color;
+    color: $text-primary; // Often dark text on warning for contrast
+  }
+  &.success {
+    background-color: $success-color;
+    color: $text-on-dark;
+  }
+  &.info {
+    background-color: $info-color;
+    color: $text-on-dark;
+  }
+}
+
+// Outlined variant
+.outlined {
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+
+  &.primary {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+  &.secondary {
+    border-color: $secondary-color;
+    color: $secondary-color;
+  }
+  &.error { // Renamed from 'danger' to 'error'
+    border-color: $danger-color;
+    color: $danger-color;
+  }
+  &.warning {
+    border-color: $warning-color;
+    color: $warning-color;
+  }
+  &.success {
+    border-color: $success-color;
+    color: $success-color;
+  }
+  &.info {
+    border-color: $info-color;
+    color: $info-color;
+  }
+}

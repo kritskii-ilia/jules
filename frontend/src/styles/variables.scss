@@ -1,0 +1,52 @@
+// Color Palette
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+// Background Colors
+$background-primary: #f0f2f5;
+$background-secondary: #ffffff;
+$background-dark: #2c2f33;
+
+// Text Colors
+$text-primary: #333;
+$text-secondary: #555;
+$text-light: #f8f9fa;
+$text-on-dark: #ffffff;
+
+// Font Sizes
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-lg: 1.25rem; // 20px
+
+// Font Families
+$font-family-sans-serif: 'Arial', sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Spacing
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem;  // 8px
+$spacing-md: 1rem;    // 16px
+$spacing-lg: 1.5rem;  // 24px
+$spacing-xl: 2rem;    // 32px
+
+// Borders
+$border-radius: 0.25rem; // 4px
+$border-color: #dee2e6;
+
+// Breakpoints for responsive design (example)
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-indexes (example)
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-modal: 1050;
+$zindex-tooltip: 1070;

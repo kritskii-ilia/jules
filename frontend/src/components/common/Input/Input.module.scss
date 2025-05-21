@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+  width: 100%; // Default to full width, can be overridden by parent
+}
+
+.label {
+  margin-bottom: $spacing-xs;
+  font-weight: 500;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+}
+
+.input {
+  padding: $spacing-sm;
+  font-size: $font-size-base;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $background-secondary;
+  color: $text-primary;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%; // Ensure input takes full width of its wrapper
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+
+  &:disabled {
+    background-color: $light-color; // Lighter background for disabled state
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  &::placeholder {
+    color: lighten($text-secondary, 20%);
+  }
+}
+
+.errorInput {
+  border-color: $danger-color;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($danger-color, 0.2);
+  }
+}
+
+.errorMessage {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $danger-color;
+}

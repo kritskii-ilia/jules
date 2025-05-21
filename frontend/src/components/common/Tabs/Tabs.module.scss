@@ -1,0 +1,78 @@
+@import '../../../styles/variables.scss';
+
+.tabsContainer {
+  width: 100%;
+  // Add any container-specific styles if needed, e.g., margin
+}
+
+.tabNav {
+  display: flex;
+  border-bottom: 2px solid $border-color;
+  margin-bottom: $spacing-md;
+}
+
+.tabNavItem {
+  padding: $spacing-sm $spacing-md;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: $font-size-base;
+  color: $text-secondary;
+  position: relative; // For the active indicator line
+  transition: color 0.2s ease-in-out;
+
+  &:hover:not(.disabled) {
+    color: $primary-color;
+  }
+
+  &.active {
+    color: $primary-color;
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; // Align with the nav border bottom
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $primary-color;
+    }
+  }
+
+  &.disabled {
+    color: lighten($text-secondary, 25%);
+    cursor: not-allowed;
+  }
+}
+
+.tabContent {
+  // Styles for the area that holds the active tab's content
+  padding: $spacing-md 0; // Add some padding above/below content
+}
+
+.tabPane {
+  // Default state for a tab pane
+  &.hiddenPane {
+    display: none;
+  }
+
+  &.activePane {
+    display: block;
+    // Optional: Add animations for tab transitions
+    // animation: fadeInPane 0.3s ease-in-out;
+  }
+}
+
+/* Example fade-in animation for active pane (optional)
+@keyframes fadeInPane {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+*/

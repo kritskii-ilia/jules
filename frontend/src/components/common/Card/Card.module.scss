@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+
+.card {
+  background-color: $background-secondary;
+  border: 1px solid $border-color;
+  border-radius: $border-radius * 2; // Slightly larger radius than standard elements
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); // Subtle shadow
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; // Ensures child elements conform to border radius
+  margin-bottom: $spacing-lg; // Space below cards
+}
+
+.cardHeader {
+  padding: $spacing-md;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lighten($background-primary, 2%); // Slightly different header background
+
+  // If only title is present, it takes full width.
+  // If headerContent is also present, title and content will share space.
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0; // Remove default heading margin
+}
+
+.cardHeaderContent {
+  // Styles for the custom content area in the header
+  // For example, to align items to the right if it's a button or similar:
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.cardBody {
+  padding: $spacing-md;
+  flex-grow: 1; // Allows card body to expand if card has fixed height or is in flex container
+
+  // Example: If you want consistent spacing for direct children of cardBody
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}

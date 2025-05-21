@@ -1,0 +1,77 @@
+@import '../../../styles/variables.scss';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $zindex-modal; // From variables.scss
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background-color: $background-secondary;
+  padding: $spacing-lg;
+  border-radius: $border-radius * 2; // Slightly larger radius for modals
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 300px; // Minimum width
+  max-width: 90%;   // Maximum width relative to viewport
+  max-height: 90vh; // Maximum height relative to viewport
+  overflow-y: auto; // Scroll if content exceeds max height
+  position: relative; // For positioning header/close button if needed
+  transform: scale(0.9);
+  animation: scaleIn 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275); // Slight bounce effect
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: $spacing-md;
+}
+
+.modalTitle {
+  font-size: $font-size-lg;
+  color: $text-primary;
+  margin-bottom: 0; // Override default h2 margin
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.75rem; // Make 'X' larger
+  color: $text-secondary;
+  cursor: pointer;
+  padding: $spacing-xs $spacing-sm; // Add some padding for easier clicking
+  line-height: 1; // Ensure 'X' is centered in its button area
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+.modalBody {
+  // Styles for the main content area of the modal
+  // For example, if you expect text:
+  color: $text-primary;
+}

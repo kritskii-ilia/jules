@@ -1,0 +1,96 @@
+@import '../../../styles/variables.scss';
+
+.tooltipWrapper {
+  position: relative;
+  display: inline-block; // Or block, depending on how children should behave
+  cursor: help; // Indicate that there's help/tooltip available
+}
+
+.tooltipContent {
+  position: absolute;
+  background-color: $dark-color;
+  color: $text-on-dark;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  font-size: $font-size-sm;
+  z-index: $zindex-tooltip;
+  white-space: nowrap; // Prevent wrapping for simple tooltips
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+
+  // Default to hidden state
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Arrow (optional, but common for tooltips)
+  &::after {
+    content: '';
+    position: absolute;
+    border-width: 6px; // Size of the arrow
+    border-style: solid;
+  }
+}
+
+// Positioning
+.top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px; // Space for the arrow + a bit more
+
+  &::after {
+    top: 100%; // Arrow points down from the tooltip
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: $dark-color transparent transparent transparent;
+  }
+}
+
+.bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+
+  &::after {
+    bottom: 100%; // Arrow points up from the tooltip
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent $dark-color transparent;
+  }
+}
+
+.left {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  margin-right: 8px;
+
+  &::after {
+    top: 50%;
+    left: 100%; // Arrow points right from the tooltip
+    transform: translateY(-50%);
+    border-color: transparent transparent transparent $dark-color;
+  }
+}
+
+.right {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+
+  &::after {
+    top: 50%;
+    right: 100%; // Arrow points left from the tooltip
+    transform: translateY(-50%);
+    border-color: transparent $dark-color transparent transparent;
+  }
+}
